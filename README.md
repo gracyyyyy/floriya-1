@@ -1,6 +1,6 @@
 # Floriya
 
-Foobar is a Python library for dealing with word pluralization.
+Floriya is none of your buissness, unless you are g**cy or p*hu 
 
 ## Installation
 
