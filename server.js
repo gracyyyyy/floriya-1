@@ -1,5 +1,14 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://user:<password>@cluster0.zzpbu.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("main").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
