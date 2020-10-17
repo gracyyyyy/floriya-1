@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paitient Details</title>
+    <title>Patient Details</title>
     <%- include('../partials/head'); %>
 </head>
 <body>
@@ -14,11 +14,11 @@
           <div class="container-fluid">
             <div class="row mb-2">
               <div class="col-sm-6">
-                <h1>Profile</h1>
+                <h1>Patient</h1>
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/d">Home</a></li>
                   <li class="breadcrumb-item active">User Profile</li>
                 </ol>
               </div>
@@ -41,64 +41,67 @@
                            alt="User profile picture">
                     </div>
     
-                    <h3 class="profile-username text-center">Nina Mcintire</h3>
+                    <h3 class="profile-username text-center">Jane Doe</h3>
     
-                    <p class="text-muted text-center">Software Engineer</p>
+                    <p class="text-muted text-center">Disease</p>
     
                     <ul class="list-group list-group-unbordered mb-3">
                       <li class="list-group-item">
-                        <b>Followers</b> <a class="float-right">1,322</a>
+                        <b>Heartrate</b> <a class="float-right">76</a>
                       </li>
                       <li class="list-group-item">
-                        <b>Following</b> <a class="float-right">543</a>
+                        <b>Blood Pressure</b> <a class="float-right">120/80</a>
                       </li>
                       <li class="list-group-item">
-                        <b>Friends</b> <a class="float-right">13,287</a>
+                        <b>%SpO2</b> <a class="float-right">96</a>
                       </li>
                     </ul>
     
-                    <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                    <a href="#" class="btn btn-primary btn-block"><b>Last updated at : 14:30 IST </b> </a>
                   </div>
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
     
-                <!-- About Me Box -->
+                <!-- About The Patient Box -->
                 <div class="card card-primary">
                   <div class="card-header">
-                    <h3 class="card-title">About Me</h3>
+                    <h3 class="card-title">About the Patient</h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
-                    <strong><i class="fas fa-book mr-1"></i> Education</strong>
+                    <strong><i class="fas fa-book mr-1"></i>Doctor</strong>
     
                     <p class="text-muted">
-                      B.S. in Computer Science from the University of Tennessee at Knoxville
+                      Mr John Doe <br>
+                      Intern : abcd <br>
+                      Nurse team : A 
                     </p>
     
                     <hr>
     
-                    <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
+                    <strong><i class="fas fa-book mr-1"></i>Here Since</strong>
     
-                    <p class="text-muted">Malibu, California</p>
+                    <p class="text-muted">
+                      12 July, 2019
+                    </p>
     
                     <hr>
     
-                    <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
+                    <strong><i class="fas fa-book mr-1"></i>Latest Update </strong>
     
                     <p class="text-muted">
-                      <span class="tag tag-danger">UI Design</span>
-                      <span class="tag tag-success">Coding</span>
-                      <span class="tag tag-info">Javascript</span>
-                      <span class="tag tag-warning">PHP</span>
-                      <span class="tag tag-primary">Node.js</span>
+                      14:30 IST, Nurse : XYZ
                     </p>
     
                     <hr>
     
                     <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
     
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                    <p class="text-muted">
+                      Check again at : *time* <br>
+                      Tests to be taken : *name of tests*
+                    </p>
                   </div>
                   <!-- /.card-body -->
                 </div>
@@ -247,13 +250,12 @@
                             <div class="timeline-item">
                               <span class="time"><i class="far fa-clock"></i> 12:05</span>
     
-                              <h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
+                              <h3 class="timeline-header"><a href="#">Test Results</a></h3>
     
                               <div class="timeline-body">
-                                Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-                                weebly ning heekya handango imeem plugg dopplr jibjab, movity
-                                jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-                                quora plaxo ideeli hulu weebly balihoo...
+                                Patient to be diagnosed. <br>
+                                Test Results attached.<br>
+                                <div> <img class = "timeline-body" src="img/testresults" alt=""> </div>
                               </div>
                               <div class="timeline-footer">
                                 <a href="#" class="btn btn-primary btn-sm">Read more</a>
@@ -311,8 +313,8 @@
                               <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
     
                               <div class="timeline-body">
-                                <img src="https://placehold.it/150x100" alt="...">
-                                <img src="https://placehold.it/150x100" alt="...">
+                                <img src="img/testresults" alt="...">
+                                <img src="img/testresults" alt="...">
                                 <img src="https://placehold.it/150x100" alt="...">
                                 <img src="https://placehold.it/150x100" alt="...">
                               </div>
