@@ -18,18 +18,15 @@ passport.deserializeUser(function(user, done) {
     */
     done(null, user);
 });
-
 passport.use(new GoogleStrategy({
     clientID: "201734197350-pr6kt7jn1d39gq8l3ndiilhhds9qqide.apps.googleusercontent.com",
     clientSecret: "cE1yihNRbOuEUdr1cOI5ckVG",
     callbackURL: "http://localhost:3000/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
-    /*
-     use the profile info (mainly profile id) to check if the user is registerd in ur db
-     If yes select the user and pass him to the done callback
-     If not create the user and then select him and pass to callback
-    */
+    console.log('ID: '+profile.id);
+    console.log('Name: '+profile.displayName);
+    console.log('Email : '+profile.emails[0].value);
     return done(null, profile);
   }
 ));

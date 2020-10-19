@@ -4,7 +4,37 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const passport = require('passport');
 const cookieSession = require('cookie-session')
-require('./passport-setup');
+//passport setup
+
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+passport.serializeUser(function(user, done) {
+    /*
+    From the user take just the id (to minimize the cookie size) and just pass the id of the user
+    to the done callback
+    PS: You dont have to do it like this its just usually done like this
+    */
+    done(null, user);
+  });
+  
+passport.deserializeUser(function(user, done) {
+    /*
+    Instead of user this function usually recives the id 
+    then you use the id to select the user from the db and pass the user obj to the done callback
+    PS: You can later access this data in any routes in: req.user
+    */
+    done(null, user);
+});
+passport.use(new GoogleStrategy({
+    clientID: "201734197350-pr6kt7jn1d39gq8l3ndiilhhds9qqide.apps.googleusercontent.com",
+    clientSecret: "cE1yihNRbOuEUdr1cOI5ckVG",
+    callbackURL: "http://localhost:3000/google/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    console.log('profile')
+    return done(null, profile);
+  }
+));
 
 //google auth code
 
@@ -46,7 +76,7 @@ app.get('/google', passport.authenticate('google', { scope: ['profile', 'email']
 app.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/good');
+    res.redirect('/d');
   }
 );
 
@@ -68,6 +98,8 @@ client.connect(err => {
   client.close();
 });
 
+//all the routes
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -79,23 +111,24 @@ app.get('/', function(req, res) {
 });
 // about page
 app.get('/at', function(req, res) {
-    res.render('pages/AT');
+    res.render('pages/AT',{nameuser :req.user.displayName});
 });
-// about page
-app.get('/d', function(req, res) {
-    res.render('pages/d');
+// dashboard
+var name = name;
+app.get('/d',isLoggedIn , function(req, res) {
+    res.render('pages/d',{nameuser :req.user.displayName});
 });
-// about page
+// paitients
 app.get('/p', function(req, res) {
-    res.render('pages/p');
+    res.render('pages/p',{nameuser :req.user.displayName});
 });
-// about page
+// schedeul
 app.get('/s', function(req, res) {
-    res.render('pages/s');
+    res.render('pages/s',{nameuser :req.user.displayName});
 });
-// about page
+// paitient details
 app.get('/pd', function(req, res) {
-    res.render('pages/pd');
+    res.render('pages/pd',{nameuser :req.user.displayName});
 });
 
 app.listen(3000);
