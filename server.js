@@ -111,24 +111,24 @@ app.get('/', function(req, res) {
 });
 // about page
 app.get('/at', function(req, res) {
-    res.render('pages/AT',{nameuser :req.user.displayName});
+    res.render('pages/AT',{nameuser :req.user.displayName,pic:req.user.photos[0]});
 });
 // dashboard
 var name = name;
 app.get('/d',isLoggedIn , function(req, res) {
-    res.render('pages/d',{nameuser :req.user.displayName});
+    res.render('pages/d',{nameuser :req.user.displayName,pic:req.user.photos[0]});
 });
 // paitients
 app.get('/p', function(req, res) {
-    res.render('pages/p',{nameuser :req.user.displayName});
+    res.render('pages/p',{nameuser :req.user.displayName,pic:req.user.photos[0]});
 });
 // schedeul
 app.get('/s', function(req, res) {
-    res.render('pages/s',{nameuser :req.user.displayName});
+    res.render('pages/s',{nameuser :req.user.displayName,pic:req.user.photos[0]});
 });
 // paitient details
 app.get('/pd', function(req, res) {
-    res.render('pages/pd',{nameuser :req.user.displayName});
+    res.render('pages/pd',{nameuser :req.user.displayName,pic:req.user.photos[0]});
 });
 
 app.listen(3000);
